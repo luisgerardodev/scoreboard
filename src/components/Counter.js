@@ -1,17 +1,13 @@
-import React, { useState } from 'react';
+import React from 'react';
 
-const Counter = () => {
-  const [score, setScore] = useState(0);
-
-  const incrementScore = () => setScore(score + 1);
-  const decrementScore = () => setScore(score - 1);
+const Counter = ({index, score, changeScore}) => {
 
   return (
     <div className="counter">
       <button
         type="button"
         className="counter-action decrement"
-        onClick={decrementScore}
+        onClick={() => changeScore(index, -1)}
       >
         -
         </button>
@@ -19,7 +15,7 @@ const Counter = () => {
       <button
         type="button"
         className="counter-action increment"
-        onClick={incrementScore}
+        onClick={() => changeScore(index, +1)}
       >
         +
         </button>

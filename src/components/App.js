@@ -9,15 +9,24 @@ const App = () => {
 
   const handleRemovePlayer = (id) => setPlayers(players.filter(p => p.id !== id));
 
+  const handleScoreChange = (index, delta) => {
+    const playersArr = [...players];
+    playersArr[index].score += delta;
+    setPlayers(playersArr);
+  }
+  
   return (
     <div className="scoreboard">
       <Header title="Scoreboard" totalPlayers={players.length} />
-      {players.map((player) => (
+      {players.map((player, index) => (
         <Player 
           key={player.id.toString()}
+          index={index}
           id={player.id}
           name={player.name}
+          score={player.score}
           removePlayer={handleRemovePlayer}
+          changeScore={handleScoreChange}
         />
       ))}
     </div>

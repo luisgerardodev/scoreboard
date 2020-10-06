@@ -1,26 +1,32 @@
 [
   {
     "name": "Luima",
-    "id": 1
+    "id": 1,
+    "score": 0
   },
   {
     "name": "Jesus",
-    "id": 2
+    "id": 2,
+    "score": 0
   },
   {
     "name": "Pedro",
-    "id": 3
+    "id": 3,
+    "score": 0
   },
   {
     "name": "Miguel",
-    "id": 4
+    "id": 4,
+    "score": 0
   },
   {
     "name": "Marcos",
-    "id": 5
+    "id": 5,
+    "score": 0
   },
   {
     "name": "Fernando",
-    "id": 6
+    "id": 6,
+    "score": 0
   }
 ]
