@@ -1,25 +1,29 @@
-import React, { useState } from "react";
+import React from "react";
+import PropTypes from 'prop-types';
 
 const AddPlayerForm = ({ addPlayer }) => {
-  const [value, setValue] = useState("");
+  const playerInput = React.createRef();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    addPlayer(value);
-    setValue('');
+    addPlayer(playerInput.current.value);
+    e.currentTarget.reset();
   };
 
   return (
     <form onSubmit={handleSubmit}>
       <input
         type="text"
-        value={value}
-        onChange={(e) => setValue(e.target.value)}
+        ref={playerInput}
         placeholder="Enter a player's name"
       />
       <input type="submit" value="Add Player" />
     </form>
   );
 };
+
+AddPlayerForm.propTypes = {
+  addPlayer: PropTypes.func
+}
 
 export default AddPlayerForm;
